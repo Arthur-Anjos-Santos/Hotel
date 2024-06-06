@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Hotel do Arthur</h1>
+    </header>
+    <main>
+        <div class="form-container">
+            <div class="form-tab">
+                <button id="loginTab" class="active" onclick="showLogin()">Login</button>
+                <button id="registerTab" onclick="showRegister()">Cadastrar</button>
+            </div>
+            <div id="loginForm" class="form-content">
+                <h2>Login</h2>
+                <form onsubmit="login(event)">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" required>
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+            <div id="registerForm" class="form-content hidden">
+                <h2>Cadastro</h2>
+                <form onsubmit="register(event)">
+                    <label for="registerName">Name:</label>
+                    <input type="text" id="registerName" required>
+                    <label for="registerEmail">Email:</label>
+                    <input type="email" id="registerEmail" required>
+                    <label for="registerPassword">Password:</label>
+                    <input type="password" id="registerPassword" required>
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
