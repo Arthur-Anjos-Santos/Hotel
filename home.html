@@ -3,49 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel do Arthur</title>
+    <title>Hotel - Início</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Hotel do Arthur</h1>
+        <h1>Hotel</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Quarto</a></li>
+                <li><a href="#">Informações</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <div class="form-container">
-            <div class="form-tab">
-                <button id="loginTab" class="active" onclick="showLogin()">Login</button>
-                <button id="registerTab" onclick="showRegister()">Cadastrar</button>
+        <section class="hero">
+            <h2>Bem Vindo ao Hotel do Arthur</h2>
+            <p>Aqui você tem a melhor experiência da cidade!</p>
+        </section>
+        <section class="booking">
+            <h3>Estadia</h3>
+            <form onsubmit="calculateStay(event)">
+                <label for="bookingDays">Numero de Dias:</label>
+                <input type="number" id="bookingDays" required>
+                <button type="submit">Valor Total:</button>
+            </form>
+            <p id="costDisplay"></p>
+        </section>
+        <section class="features">
+            <h3>Informações e Imagens</h3>
+            <ul>
+                <li>Quartos de Luxo</li>
+                <li>Spa</li>
+                <li>Restaurantes</li>
+                <li>Salões</li>
+                <li>Piscina</li>
+            </ul>
+        </section>
+        <section class="galeria">
+            <h3>Galeria</h3>
+            <div class="images">
+                <img src="quarto.png" alt="Quartos">
+                <img src="spa.jpg" alt="Spa">
+                <img src="restaurante.jpg" alt="Restaurante">
+                <img src="piscina.jpg" alt="Piscina">
             </div>
-            <div id="loginForm" class="form-content active">
-                <h2>Login</h2>
-                <form onsubmit="login(event)">
-                    <label for="loginEmail">Email:</label>
-                    <input type="email" id="loginEmail" required>
-                    <label for="loginPassword">Password:</label>
-                    <input type="password" id="loginPassword" required>
-                    <button type="submit">Login</button>
-                </form>
-            </div>
-            <div id="registerForm" class="form-content">
-                <h2>Cadastro</h2>
-                <form onsubmit="register(event)">
-                    <label for="registerName">Name:</label>
-                    <input type="text" id="registerName" required>
-                    <label for="registerEmail">Email:</label>
-                    <input type="email" id="registerEmail" required>
-                    <label for="registerPassword">Password:</label>
-                    <input type="password" id="registerPassword" required>
-                    <label for="registerCPF">CPF:</label>
-                    <input type="text" id="registerCPF" required oninput="maskCPF(this)">
-                    <label for="registerDate">Date of Birth:</label>
-                    <input type="text" id="registerDate" required oninput="maskDate(this)">
-                    <label for="registerDays">Number of Days:</label>
-                    <input type="number" id="registerDays" required>
-                    <button type="submit">Cadastrar</button>
-                </form>
-            </div>
-        </div>
+        </section>
     </main>
+    <footer>
+        <p>&copy; 2024 Hotel do Arthur. Todos os direitos reservados (Trabalho Estácio).</p>
+    </footer>
     <script src="scripts.js"></script>
 </body>
 </html>
